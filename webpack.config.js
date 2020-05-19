@@ -1,5 +1,6 @@
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var { CleanWebpackPlugin } = require("clean-webpack-plugin");
 var path = require("path");
 
 module.exports = {
@@ -19,7 +20,7 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              url: false,
+              url: true,
             },
           },
           "postcss-loader",
@@ -31,15 +32,29 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "static/images/[name].[ext]",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
     ],
   },
   output: {
     path: path.join(__dirname, "dist"),
-    publicPath: "/",
     filename: "bundle.js",
   },
   resolve: {
-    extensions: [".html", ".js", ".scss"],
+    extensions: [".html", ".js", ".scss", ".jpg", ".png"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -49,6 +64,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "style.bundle.css",
     }),
+    new CleanWebpackPlugin(),
   ],
   devServer: {
     contentBase: "./dist",

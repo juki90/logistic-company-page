@@ -1,0 +1,99 @@
+@import "variables.scss";
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.8rem;
+  background-color: $body-background-color;
+  overflow-x: hidden;
+  @media screen and (min-width: $mobile-m) {
+    font-size: 2rem;
+  }
+  @media screen and (min-width: $mobile-l) {
+    font-size: 2.3rem;
+  }
+  @media screen and (min-width: $desktop-m) {
+    font-size: 2.6rem;
+  }
+  @media screen and (min-width: $desktop-l) {
+    font-size: 2.9rem;
+  }
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: #{(100 + ((6 - $i) * 30)) + "%"};
+  }
+}
+
+#main-wrapper {
+  position: relative;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  @media screen and (min-width: $desktop-s) {
+    width: $desktop-s;
+  }
+  #section-intro & {
+    padding: 0 1em;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $mobile-l) {
+    flex-direction: row;
+  }
+}
+
+.column-50 {
+  width: 100%;
+  @media screen and (min-width: $mobile-l) {
+    width: 50%;
+  }
+}
+
+.img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.button {
+  position: relative;
+  height: 39px;
+  background-color: $button-background-color;
+  color: $button-default-color;
+  font-size: 75%;
+  max-width: 100px;
+  padding: 0 1em 0 1.2em;
+  border: 0 none;
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  text-align: center;
+  cursor: pointer;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 20px;
+    height: 39px;
+    background-image: url("assets/decorations/panel-ending-right.png");
+    background-repeat: no-repeat;
+  }
+}

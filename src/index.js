@@ -1,3 +1,2 @@
 import "./style.scss";
-
-console.log("Jupi!!!!!");
+import "./scripts/navigation.js";

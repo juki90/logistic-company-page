@@ -1,0 +1,34 @@
+// Colors
+$body-background-color: #ffffff;
+$body-special-color: #246;
+$nav-default-color: #fff;
+
+$nav-background-image: linear-gradient(
+  0deg,
+  rgba(155, 162, 238, 1) 0%,
+  rgba(142, 170, 216, 1) 100%
+);
+$nav-decor-background-image: linear-gradient(
+  90deg,
+  rgba(168, 205, 215, 1) 0%,
+  rgba(149, 162, 243, 1) 50%,
+  rgba(162, 176, 187, 1) 100%
+);
+
+$nav-content-background-color: #332f44;
+
+$button-default-color: $body-background-color;
+$button-background-color: $nav-content-background-color;
+
+// Sizes
+$nav-height: 63px;
+$border-radius: 5px;
+
+// Responsive sizes
+$mobile-s: 480px;
+$mobile-m: 768px;
+$mobile-l: 1024px;
+$desktop-s: 1200px;
+$desktop-m: 1600px;
+$desktop-l: 1800px;
+$desktop-xl: 2200px;
