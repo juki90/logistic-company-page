@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-#header {
+.header {
   display: flex;
   position: absolute;
   top: 0;
@@ -22,6 +22,15 @@
       @media screen and (min-width: $mobile-l) {
         background-image: $nav-background-image;
       }
+    }
+  }
+  a {
+    color: $nav-link-default-color;
+    text-decoration: none;
+    &:hover,
+    &:active,
+    &.active {
+      color: darken($nav-link-default-color, 10);
     }
   }
   .brand {
@@ -67,27 +76,36 @@
       height: 100px;
       background-size: 100px 100px;
     }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
   .nav {
     position: absolute;
-    top: 42px;
-    right: 0;
+    top: 70px;
+    right: 20px;
     z-index: 9998;
+
     @media screen and (min-width: $mobile-l) {
       background-color: $nav-content-background-color;
       height: $nav-height - 24px;
-      padding: 0 120px 0 20px;
+      padding: 0 120px 0 40px;
+      right: 0;
+      width: 700px;
       top: 32px;
     }
     .nav-item-list {
-      margin: 25px 30px;
-      padding: 20px;
       background-color: $nav-content-background-color;
       border-radius: $border-radius;
       opacity: 0;
       transform: translate(80%, -80%);
-
+      padding: 20px;
       @media screen and (min-width: $mobile-l) {
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
         border-radius: 0;
         margin: 0;
         display: flex;
@@ -135,7 +153,7 @@
   }
   .navicon {
     position: absolute;
-    top: 8px;
+    top: 4px;
     right: 15px;
     width: 65px;
     height: 65px;
@@ -144,7 +162,6 @@
     background-color: transparent;
     background-size: 65px 65px;
     border: 0 none;
-    cursor: pointer;
     z-index: 9999;
     @media screen and (min-width: $mobile-l) {
       top: 10px;
@@ -188,13 +205,12 @@
   }
 }
 
-#header.scrolled {
+.header.scrolled {
   .nav {
     position: fixed;
-    top: 25px;
-    left: calc(50%);
     @media screen and (min-width: $mobile-l) {
-      transform: translateX(110%);
+      right: calc(50% - 600px);
+      transform: translateX(calc(100% + 780px));
       transform-origin: center center;
       &.active {
         transition: transform 0.5s;
@@ -203,7 +219,7 @@
       }
       &.deactivating {
         transition: transform 0.5s;
-        transform: translateX(110%);
+        transform: translateX(calc(100% + 780px));
         transform-origin: center center;
       }
     }
@@ -213,10 +229,13 @@
   }
   .navicon {
     position: fixed;
-    top: 7px;
     @media screen and (min-width: $mobile-l) {
       top: 5px;
+      right: 15px;
+    }
+    @media screen and (min-width: $desktop-s) {
       left: calc(50% + 505px);
+      cursor: pointer;
     }
   }
 }

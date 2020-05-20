@@ -1,0 +1,61 @@
+#section-partnership {
+  position: relative;
+  padding: 10em 0 2em 0;
+  background-color: adjust-hue(lighten(#9aa2ed, 15), 15);
+  @media screen and (min-width: $desktop-m) {
+    &:before {
+      content: "CAN WE COOPERATE?";
+      position: absolute;
+      top: 1em;
+      right: 0;
+      transform: rotate(90deg) translate(40%, -380px);
+      font-size: 400%;
+      font-weight: bold;
+      color: adjust-hue(lighten(#9aa2ed, 5), 15);
+    }
+  }
+  .subpage-icon {
+    @media screen and (min-width: $desktop-m) {
+      background-image: url("assets/images/partnership-icon.svg");
+    }
+  }
+  .big-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 238px;
+    height: 43px;
+    color: #ccddff;
+    border-radius: 5px;
+    border: 0 none;
+    background-color: transparent;
+    background-image: url("assets/decorations/big-button.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 238px 100%;
+    padding: 0 10px;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 75%;
+    letter-spacing: 1px;
+    cursor: pointer;
+    @media screen and (min-width: $mobile-l) {
+      width: 475px;
+      height: 85px;
+      background-size: 475px 100%;
+      font-size: 120%;
+    }
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  .img {
+    margin-bottom: 1.5em;
+  }
+  .special-text {
+    font-size: 125%;
+    text-shadow: 1px 1px 3px #a1b6df;
+    text-align: center;
+    margin-bottom: 1.25em !important;
+  }
+}

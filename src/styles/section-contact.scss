@@ -1,0 +1,68 @@
+#section-contact {
+  position: relative;
+  padding: 10em 0 2em 0;
+  background-color: #dddddd;
+  @media screen and (min-width: $desktop-m) {
+    &:before {
+      content: "STAY IN TOUCH";
+      position: absolute;
+      top: 1em;
+      right: 0;
+      transform: rotate(90deg) translate(40%, -230px);
+      font-size: 400%;
+      font-weight: bold;
+      color: #bbbbbb;
+    }
+  }
+  .subpage-icon {
+    @media screen and (min-width: $desktop-m) {
+      background-image: url("assets/images/contact-icon.svg");
+    }
+  }
+  .contact-info {
+    text-align: center;
+    b {
+      display: block;
+      margin-bottom: 10px;
+    }
+    p {
+      padding: 0 15px;
+    }
+  }
+  .contact-form {
+    width: 100%;
+    padding: 20px;
+    border-radius: $border-radius;
+    background-color: desaturate($primary-color, 20);
+    color: lighten($secondary-color, 15);
+    margin-bottom: 25px;
+    .column-1-3,
+    .column-2-3 {
+      padding: 15px 25px 15px 15px;
+    }
+    label {
+      display: block !important;
+      margin-bottom: 15px;
+      font-size: 90%;
+      input {
+        display: block;
+        margin: 15px 0;
+        overflow: hidden;
+        font-size: inherit;
+        height: 30px;
+        margin-bottom: 25px;
+        border-radius: $border-radius;
+        border: 0 none;
+        width: 100%;
+      }
+    }
+    textarea {
+      border-radius: $border-radius;
+      border: 0 none;
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: inherit;
+      font-family: inherit;
+    }
+  }
+}

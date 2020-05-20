@@ -1,0 +1,79 @@
+#section-solutions {
+  position: relative;
+  padding: 10em 0 2em 0;
+  @media screen and (min-width: $desktop-m) {
+    &:before {
+      content: "WHAT DO WE OFFER";
+      position: absolute;
+      top: 1em;
+      right: 0;
+      transform: rotate(90deg) translate(40%, -360px);
+      font-size: 400%;
+      font-weight: bold;
+      color: rgba($primary-color, 0.25);
+    }
+  }
+  .subpage-icon {
+    @media screen and (min-width: $desktop-m) {
+      background-image: url("assets/images/solutions-icon.svg");
+    }
+  }
+
+  .solutions {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+    min-width: 0;
+    min-height: 0;
+    @media screen and (min-width: $mobile-s) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: $desktop-m) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .solution {
+      min-width: 0;
+      grid-column: 1;
+      @media screen and (min-width: $mobile-s) {
+        &:nth-of-type(1) {
+          grid-column: 1;
+          grid-row: 1;
+        }
+        &:nth-of-type(2) {
+          grid-column: 2;
+          grid-row: 1;
+        }
+        &:nth-of-type(3) {
+          grid-column: 1;
+          grid-row: 2;
+        }
+        &:nth-of-type(4) {
+          grid-column: 2;
+          grid-row: 2;
+        }
+      }
+      @media screen and (min-width: $desktop-m) {
+        &:nth-of-type(1) {
+          grid-column: 1;
+          grid-row: 1;
+        }
+        &:nth-of-type(2) {
+          grid-column: 2;
+          grid-row: 1;
+        }
+        &:nth-of-type(3) {
+          grid-column: 3;
+          grid-row: 1;
+        }
+        &:nth-of-type(4) {
+          grid-column: 4;
+          grid-row: 1;
+        }
+      }
+
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+}

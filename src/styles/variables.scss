@@ -1,7 +1,13 @@
 // Colors
+$primary-color: #246;
+$secondary-color: #a1b6df;
+
 $body-background-color: #ffffff;
-$body-special-color: #246;
+$body-special-color: $primary-color;
 $nav-default-color: #fff;
+$nav-link-default-color: #dfeffc;
+
+$link-default-color: invert(adjust-hue(#dfeffc, 180));
 
 $nav-background-image: linear-gradient(
   0deg,
@@ -19,6 +25,8 @@ $nav-content-background-color: #332f44;
 
 $button-default-color: $body-background-color;
 $button-background-color: $nav-content-background-color;
+
+$section-about-background-color: #dfeffc;
 
 // Sizes
 $nav-height: 63px;

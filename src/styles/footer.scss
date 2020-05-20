@@ -1,0 +1,23 @@
+.footer {
+  width: 100%;
+  padding: 20px;
+  background-color: $primary-color;
+  color: #ffffff;
+  & > .container {
+    display: flex;
+    flex-direction: row;
+    .partners {
+      margin-left: auto;
+      a {
+        display: block;
+        color: $nav-link-default-color;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &.active {
+          color: darken($nav-link-default-color, 10);
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ const handleClickNavicon = (e) => {
       window.scrollY ||
       window.scrollTop ||
       document.querySelector("#html").scrollTop,
-    el = document.querySelector("#header");
+    el = document.querySelector(".header");
 
   if (document.body.clientWidth >= 1024 && s <= 100) {
     return;
@@ -111,7 +111,8 @@ const handleScroll = (e) => {
       window.scrollY ||
       window.scrollTop ||
       document.querySelector("#html").scrollTop,
-    el = document.querySelector("#header");
+    el = document.querySelector(".header"),
+    elNav = document.querySelector(".nav");
   timeout2 = setTimeout(() => {
     if (s > 100) {
       el.classList.add("scrolled");
@@ -120,6 +121,7 @@ const handleScroll = (e) => {
     }
     if (s <= 100) {
       el.classList.remove("scrolled");
+      elNav.classList.remove("active");
       timeout2 = 0;
     }
   }, 50);

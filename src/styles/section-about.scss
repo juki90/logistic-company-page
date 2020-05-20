@@ -1,0 +1,32 @@
+#section-about {
+  position: relative;
+  padding: 10em 0 2em 0;
+  background-color: lighten($secondary-color, 10);
+  @media screen and (min-width: $desktop-m) {
+    &:before {
+      content: "WHO WE ARE";
+      position: absolute;
+      top: 1em;
+      right: 0;
+      transform: rotate(90deg) translate(35%, -210px);
+      font-size: 400%;
+      font-weight: bold;
+      color: rgba($secondary-color, 0.75);
+    }
+  }
+  .subpage-icon {
+    @media screen and (min-width: $desktop-m) {
+      background-image: url("assets/images/about-icon.svg");
+    }
+  }
+
+  .award-info {
+    p {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      margin-bottom: 2em;
+    }
+  }
+}
