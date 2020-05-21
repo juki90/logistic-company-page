@@ -7,7 +7,7 @@
   left: 0;
   height: $nav-height;
   width: 100%;
-  z-index: 99999;
+  z-index: 9999999;
   & > .container {
     position: relative;
     z-index: 9999;
@@ -86,7 +86,7 @@
     position: absolute;
     top: 70px;
     right: 20px;
-    z-index: 9998;
+    z-index: 9999;
 
     @media screen and (min-width: $mobile-l) {
       background-color: $nav-content-background-color;

@@ -117,13 +117,16 @@ const handleScroll = (e) => {
   if (timeout2) {
     return;
   }
-  const s =
-      window.scrollY ||
-      window.scrollTop ||
-      document.querySelector("#html").scrollTop,
-    el = document.querySelector(".header"),
-    elNav = document.querySelector(".nav");
+
   timeout2 = setTimeout(() => {
+    const s =
+        window.scrollY ||
+        window.scrollTop ||
+        document.querySelector("#html").scrollTop,
+      el = document.querySelector(".header"),
+      elNav = document.querySelector(".nav"),
+      navIcon = document.querySelector(".navicon");
+    navList = document.querySelector(".nav-item-list");
     if (s > 100) {
       el.classList.add("scrolled");
       timeout2 = 0;
@@ -132,6 +135,8 @@ const handleScroll = (e) => {
     if (s <= 100) {
       el.classList.remove("scrolled");
       elNav.classList.remove("active");
+      navIcon.classList.remove("active");
+      navList.classList.remove("active");
       timeout2 = 0;
     }
   }, 50);

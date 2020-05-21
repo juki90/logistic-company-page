@@ -6,10 +6,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 0 none;
 }
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -197,10 +199,11 @@ ol {
 
 hr {
   position: relative;
-  z-index: 9994;
+  z-index: 999999;
   margin-top: -5px;
   height: 5px;
   border: 0 none;
+  overflow: visible;
   background-image: linear-gradient(
     90deg,
     rgba(191, 191, 191, 1) 0%,
@@ -217,7 +220,8 @@ hr {
     height: 40px;
     background-repeat: no-repeat;
     background-image: url("assets/decorations/hr-decoration.svg");
-    z-index: 9993;
+    z-index: 9999999;
+    overflow: visible;
     transform: translateX(-50%);
   }
 }
