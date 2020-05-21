@@ -1,4 +1,5 @@
-const navIcon = document.querySelector(".navicon");
+const navIcon = document.querySelector(".navicon"),
+  navLinks = document.querySelectorAll(".header a");
 let timeout = 0,
   timeout2 = 0;
 
@@ -26,10 +27,14 @@ const handleClickNavicon = (e) => {
 
   if (document.body.clientWidth >= 1024 && s > 100) {
     const nav = document.querySelector(".nav");
+    const navIcon = document.querySelector(".navicon");
     if (!nav.classList.contains("active")) {
       nav.classList.add("activating");
       nav.classList.add("active");
+      navIcon.classList.add("activating");
+      navIcon.classList.add("active");
       setTimeout(() => {
+        navIcon.classList.remove("activating");
         nav.classList.remove("activating");
       }, 500);
       return;
@@ -39,9 +44,12 @@ const handleClickNavicon = (e) => {
       !nav.classList.contains("activating")
     ) {
       nav.classList.add("deactivating");
+      navIcon.classList.add("deactivating");
       setTimeout(() => {
         nav.classList.remove("deactivating");
+        navIcon.classList.remove("deactivating");
         nav.classList.remove("active");
+        navIcon.classList.remove("active");
       }, 500);
     }
   }
@@ -87,6 +95,7 @@ const handleResizeThrottled = (e) => {
     return;
   }
   timeout = setTimeout(() => {
+    console.log("FIRED");
     const w = document.body.clientWidth;
     const navList = document.querySelector(".nav-item-list");
     const navIcon = document.querySelector(".navicon");
@@ -98,6 +107,7 @@ const handleResizeThrottled = (e) => {
     }
     if (w < 1024) {
       nav.classList.remove("active");
+      navIcon.classList.remove("active");
     }
     timeout = 0;
   }, 100);
@@ -127,6 +137,19 @@ const handleScroll = (e) => {
   }, 50);
 };
 
+const handleClickLink = (e) => {
+  const navList = document.querySelector(".nav-item-list");
+  const navIcon = document.querySelector(".navicon");
+  const nav = document.querySelector(".nav");
+  navList.classList.remove("active");
+  navIcon.classList.remove("active");
+  nav.classList.remove("active");
+};
+
 navIcon.addEventListener("click", handleClickNavicon);
 window.addEventListener("resize", handleResizeThrottled);
 window.addEventListener("scroll", handleScroll);
+window.addEventListener("load", handleScroll);
+navLinks.forEach((link) => {
+  link.addEventListener("click", handleClickLink);
+});
