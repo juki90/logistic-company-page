@@ -82,7 +82,6 @@ const handleInputChange = (e, label, regex) => {
 };
 
 const handleSubmit = (e) => {
-  console.log("SUBMIT");
   e.preventDefault();
   const submitMessageContainer = document.querySelector(".submit-message"),
     msg = document.createElement("span");

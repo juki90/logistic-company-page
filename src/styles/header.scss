@@ -1,6 +1,7 @@
 @import "variables.scss";
 
 .header {
+  display: -webkit-inline-box;
   display: flex;
   position: absolute;
   top: 0;
@@ -34,6 +35,7 @@
     }
   }
   .brand {
+    display: -webkit-inline-box;
     display: flex;
     align-items: center;
     position: absolute;
@@ -87,7 +89,6 @@
     top: 70px;
     right: 20px;
     z-index: 9999;
-
     @media screen and (min-width: $mobile-l) {
       background-color: $nav-content-background-color;
       height: $nav-height - 24px;
@@ -104,6 +105,7 @@
       padding: 20px;
       @media screen and (min-width: $mobile-l) {
         padding: 0;
+        display: -webkit-inline-box;
         display: flex;
         justify-content: space-around;
         border-radius: 0;

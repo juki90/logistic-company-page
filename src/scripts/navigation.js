@@ -95,7 +95,6 @@ const handleResizeThrottled = (e) => {
     return;
   }
   timeout = setTimeout(() => {
-    console.log("FIRED");
     const w = document.body.clientWidth;
     const navList = document.querySelector(".nav-item-list");
     const navIcon = document.querySelector(".navicon");

@@ -5,6 +5,7 @@
   color: #ffffff;
   font-size: 80%;
   & > .container {
+    display: -webkit-inline-box;
     display: flex;
     flex-direction: row;
     .partners {

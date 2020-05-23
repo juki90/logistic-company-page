@@ -56,8 +56,10 @@ body {
 }
 
 .columns {
+  display: -webkit-inline-box;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.5em;
   @media screen and (min-width: $mobile-l) {
     flex-direction: row;
   }
@@ -224,4 +226,12 @@ hr {
     overflow: visible;
     transform: translateX(-50%);
   }
+}
+
+#section-intro,
+#section-about,
+#section-solutions,
+#section-partnership,
+#section-contact {
+  padding-bottom: 2em;
 }

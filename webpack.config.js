@@ -1,7 +1,9 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var { CleanWebpackPlugin } = require("clean-webpack-plugin");
-var path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+const path = require("path");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -23,7 +25,13 @@ module.exports = {
               url: true,
             },
           },
-          "postcss-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: () => [autoprefixer()],
+            },
+          },
+
           "sass-loader",
         ],
       },
@@ -33,7 +41,7 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|ico)$/i,
         use: [
           {
             loader: "file-loader",
@@ -52,9 +60,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   resolve: {
-    extensions: [".html", ".js", ".scss", ".jpg", ".png"],
+    extensions: [".html", ".js", ".scss", ".jpg", ".png", ".ico"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -65,6 +74,7 @@ module.exports = {
       filename: "style.bundle.css",
     }),
     new CleanWebpackPlugin(),
+    new FaviconsWebpackPlugin("src/favicon.png"),
   ],
   devServer: {
     contentBase: "./dist",
